@@ -1,0 +1,96 @@
+=================================================================
+                RELATORIO DE AUDITORIA - NETADMIN
+=================================================================
+Data e horario da execucao: 26/11/2026 10:10:31
+Nome do servidor: cang392266
+Modo de execucao: Detalhado (-v)
+Verificacoes realizadas: Informacoes do servidor e interfaces de rede (-i), Teste de conectividade (-p 127.0.0.1), Listagem de servicos e portas em escuta (-s), Verificacao de portas especificas (-c 22,80,443), Analise de arquivo de log (-l exemplos/acessos_basico.log)
+=================================================================
+
+=== TESTE DE CONECTIVIDADE (MODO DETALHADO) ===
+
+Destino informado: 127.0.0.1
+Endereco IP resolvido: 127.0.0.1
+
+EXECUCAO DO TESTE
+  Tentativa 1: SEM RESPOSTA
+  Tentativa 2: SEM RESPOSTA
+  Tentativa 3: SEM RESPOSTA
+  Tentativa 4: SEM RESPOSTA
+
+ESTATISTICAS
+  Pacotes enviados: 4
+  Pacotes recebidos: 0
+  Pacotes perdidos: 4
+  Perda: 100%
+  Tempo minimo: N/A
+  Tempo medio: N/A
+  Tempo maximo: N/A
+
+RESULTADO: FALHA
+Detalhe: Binary file /tmp/tmp.xhqwH37fQF/ping_out.txt matches
+
+=== ANALISE DE LOG (MODO DETALHADO) ===
+
+Arquivo: exemplos/acessos_basico.log
+Registros processados: 10
+Linhas invalidas: 0
+
+RESPOSTAS HTTP POR CODIGO
+  200: 5
+  302: 1
+  403: 1
+  404: 2
+  500: 1
+
+CLASSIFICACAO
+  2xx: 5 (50%)
+  3xx: 1 (10%)
+  4xx: 3 (30%)
+  5xx: 1 (10%)
+
+REQUISICOES POR IP
+  192.0.2.10: 4
+  192.0.2.12: 2
+  192.0.2.11: 2
+  192.0.2.14: 1
+  192.0.2.13: 1
+
+REQUISICOES POR RECURSO
+  /produtos: 2
+  /login: 2
+  /: 2
+  /relatorios: 1
+  /nao-existe: 1
+  /api/pedidos: 1
+  /admin: 1
+
+REQUISICOES POR METODO
+  GET: 8
+  POST: 2
+
+ERROS HTTP
+  Respostas 4xx: 3
+  Respostas 5xx: 1
+  Total: 4
+
+ENDERECOS IP COM MAIS ERROS (4xx/5xx)
+  192.0.2.14: 1
+  192.0.2.13: 1
+  192.0.2.12: 1
+  192.0.2.10: 1
+
+HORARIO
+  Primeira requisicao: 09:00:00
+  Ultima requisicao: 09:09:00
+
+=================================================================
+                    PROBLEMAS IDENTIFICADOS
+=================================================================
+1. Comando 'ip' ausente: verificacao de interfaces e rotas nao executada.
+2. Falha de conectividade para o destino '127.0.0.1' (perda: 100%).
+3. Comando 'ss' ausente: verificacao de servicos e portas nao executada.
+4. Comando 'ss' ausente: verificacao de servicos e portas nao executada.
+5. Log 'exemplos/acessos_basico.log' apresentou 3 resposta(s) de erro cliente (4xx).
+6. Log 'exemplos/acessos_basico.log' apresentou 1 resposta(s) de erro servidor (5xx).
+=================================================================
